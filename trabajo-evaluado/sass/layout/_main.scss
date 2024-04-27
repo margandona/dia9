@@ -1,0 +1,181 @@
+.principal--container {
+    display: flex;
+
+
+}
+
+.principal--container__img {
+
+
+}
+.principal--container__text{
+    float: right;
+    
+}
+
+/* Main content styles */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero__img {
+    max-width: 100%;
+    height: auto;
+}
+
+.hero__text {
+    text-align: center;
+    float: right;
+}
+
+.about {
+    padding: 20px;
+    text-align: center;
+}
+
+.about__title {
+    font-size: 2rem;
+    color: #333;
+}
+
+.about__description {
+    color: #666;
+}
+
+/* Styles for the .more-container */
+.more-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: #f8f9fa; 
+    padding: 20px;
+    width: 420px;
+}
+
+/* Flex container */
+.more-container .flex__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 3;
+    
+}
+
+.more-container article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.more-container article > div,
+.more-container .flex__box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* container con posición relativa */
+.more-container .flex__container {
+    position: relative;
+    /* Other styles... */
+}
+
+
+
+
+
+
+/* Flex boxes with absolute positioning for overlap */
+.more-container .flex__box1 {
+    background: $amarillo; /* Example color */
+    @include flex_box;
+    z-index: 1; /* Lower z-index so it's below .flex__box2 */
+    top: 0; /* Adjust top as per the required overlap */
+    left: 0; /* Adjust left as per the required overlap */
+    
+}
+
+.more-container .flex__box2 {
+    background: $rojo; /* Example color */
+    @include flex_box;
+    z-index: 2; /* Higher z-index to be on top */
+    top: 5px; /* Adjust top to create the desired overlap */
+    left: 5px; /* Adjust left to create the desired overlap */
+    /* Add an arrow icon here */
+}
+.flex__container__arriba {
+    display: flex; /* Enable flexbox */
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+}
+
+.box__position {
+    margin-left: auto; /* This will push the .box__position to the right */
+    display: flex;
+    align-items: flex-end; /* Align children of .box__position to the end (bottom) of the container */
+    justify-content: flex-end; /* Align children of .box__position to the end (right side) of the container */
+}
+
+.more-container .flex__box3 {
+    background: $azul; /* Example color */
+    width: 420px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+/* Image sections */
+.more-container .section__image--map,
+.more-container .section__image--coffee,
+.more-container .section__image--machine {
+    flex: 1;
+    width: calc(33.333% - 10px); /* Adjust based on gap */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.more-container .section__image--map img,
+.more-container .section__image--coffee img,
+.more-container .section__image--machine img {
+    @include image_size;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .more-container {
+        flex-direction: column;
+    }
+
+    .more-container .flex__container,
+    .more-container .section__image--map,
+    .more-container .section__image--coffee,
+    .more-container .section__image--machine {
+        width: 100%;
+    }
+
+    .more-container article {
+        flex-direction: column;
+    }
+
+    .more-container article > div,
+    .more-container .flex__box {
+        width: auto;
+    }
+}

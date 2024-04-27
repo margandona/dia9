@@ -1,0 +1,32 @@
+/* Functions, mixins, variables here */ 
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}  
+@mixin flex-start {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+@mixin flex_space {
+    display: inline-block;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@mixin flex_box {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+@mixin image_size{
+    width: 100%;
+    height: auto;
+    display: block;
+}
